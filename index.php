@@ -18,8 +18,8 @@
                 <h1 class="mb-4">Login!</h1>
 
                 <div class="d-flex justify-content-center gap-3">
-                    <a href="registeration.html" class="btn btn-primary">Register</a>
-                    <a href="login.html" class="btn btn-primary">Login</a>
+                    <a href="registration.php" class="btn btn-primary">Register</a>
+                    <a href="login.php" class="btn btn-primary">Login</a>
                 </div>
             </div>
         </div>
