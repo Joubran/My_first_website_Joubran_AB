@@ -1,3 +1,39 @@
+<?php
+require_once('db.php');
+
+if (isset($_COOKIE['User'])) {
+    header("Location: /profile.php");
+    exit();
+}
+
+$link = mysqli_connect('127.0.0.1', 'root', 'Qq123456', 'first');
+
+if (!$link) {
+    die("Ошибка подключения: " . mysqli_connect_error());
+}
+
+if (isset($_POST['submit'])) {
+    $login = $_POST['login'];
+    $email = $_POST['email'];
+    $pass = $_POST['password'];
+
+    if (!$login || !$email || !$pass) {
+        die("input all parameters");
+    }
+
+    $sql = "INSERT INTO users (username, email, pass) VALUES ('$login', '$email', '$pass')";
+
+    if (!mysqli_query($link, $sql)) {
+        echo "Не удалось добавить пользователя";
+    } else {
+        header("Location: /login.php");
+        exit();
+    }
+}
+
+mysqli_close($link);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head> 
@@ -13,7 +49,7 @@
         <div class="row">
             <div class="col-12 text-center">
                 <h1 class="mb-4">Registration</h1>
-                <form action="/registration.html" method="POST" class="d-flex flex-column gap-3">
+                <form action="/registration.php" method="POST" class="d-flex flex-column gap-3">
                     <input type="text" name="login" class="form-control-hacker-input" placeholder="login">
                     <input type="email" name="email" class="form-control-hacker-input" placeholder="email">
                     <input type="password" name="password" class="form-control-hacker-input" placeholder="password">
