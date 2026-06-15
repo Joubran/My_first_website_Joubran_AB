@@ -95,7 +95,7 @@ h1, h2 {
 
 .btn-outline-danger:hover {
     background-color: #dc3545;
-    color: #fff;
+    color: #fff; 
 }
 
 .hacker-input[type="file"] {
@@ -119,3 +119,4 @@ h1, h2 {
 .hacker-input[type="file"]::file-selector-button:hover {
     background-color: #28cc28;
 }
+/*done*/
