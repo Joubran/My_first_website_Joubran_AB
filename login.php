@@ -23,12 +23,12 @@ if (isset($_POST['submit'])) {
     $sql = "SELECT * FROM users WHERE username='$login' AND pass='$pass'";
     $result = mysqli_query($link, $sql);
 
-    if (mysqli_num_rows($result) > 0) {
-        setcookie("User", $login, time() + 3600, "/");
+    if (mysqli_num_rows($result) == 1) {
+        setcookie("User", $login, time() + 7200, "/");
         header("Location: /profile.php");
         exit();
     } else {
-        echo "Неверный логин или пароль";
+        echo "incorrect username or password";
     }
 }
 
