@@ -54,10 +54,8 @@ mysqli_close($link);
                 <form action="/login.php" method="POST" class="d-flex flex-column gap-3">
                     <input type="text" name="login" class="form-control-hacker-input" placeholder="login">
                     <input type="password" name="password" class="form-control-hacker-input" placeholder="password">
-
-                    <button class="btn btn-primary" type="submit" name="submit">Login</button>
-
-                    <p class="mt-3">Don't have an account?<a href="/registration.php">Register</a></p>
+                    <button class="btn btn-primary" type="submit" name="submit">Register</button>
+                    <p class="mt-3">Alredy have an account?<a href="/login.html">Login</a></p>
                 </form>
             </div>
         </div>
